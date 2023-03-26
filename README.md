@@ -24,5 +24,7 @@ more organized manner.
 
 
 
-Do not:
-delete the 
+Do not delete the following:
+
+vite.config.js
+

@@ -1,5 +1,5 @@
 import React from 'react'
-import AddPageAdmin from './Components/addPageAdmin';
+import AddPageAdmin from './comp/addPageAdmin';
 function App() {
   return (
     <AddPageAdmin/>

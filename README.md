@@ -1,4 +1,12 @@
 # ReactProject
+!!!DO NOT DELETE THIS!!!
+
+GUIDLINES:
+
+-ALL HTML FILE IS STORE IN THE PUBLIC FOLDER
+-ALL CSS FILE IS STORE IN THE PUBLIC FOLDER
+-ALL JS AND PHP IS STORE IN THE SRC FOLDER
+
 
 Team Members
 
@@ -22,9 +30,4 @@ to create a new system that is web-based will help the company to boost customer
 delivery and profit. Business information can be stored and managed efficiently and in a
 more organized manner. 
 
-
-
-Do not delete the following:
-
-vite.config.js
 

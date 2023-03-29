@@ -1,0 +1,72 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*css for my heading text*/
+.container {
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+}
+
+.headingTitle {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: var(--pclr1);
+}
+
+/*css for table in general*/
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/*css for table heading*/
+th {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/*css for my btn in table body*/
+.Delete {
+    background-color: transparent;
+    border: none;
+}
+
+.Update {
+    background-color: transparent;
+    border: none;
+}
+
+.Delete:hover {
+    background-color: #ed818189;
+    transition: all .5s ease-in-out;
+}
+
+.Update:hover {
+    background-color: #896000a0;
+    transition: all .5s ease-in-out;
+}
+
+/*css for dropdown selection*/
+.Filtermaincontainer {
+    display: flex;
+    padding: 10px;
+}
+
+.filterText {
+    text-align: center;
+    margin-left: 25%;
+    padding-right: 10px;
+}
+
+/* css for add btn */
+.addWrapper {
+    margin-left: 78vh;
+}

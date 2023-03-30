@@ -18,14 +18,14 @@
 
     /*Primary Font*/
     --pfont1: 'Domine', serif;
-    --pfont2:
-    --pfont3: 
+    --pfont2: ;
+    --pfont3: ;
 
     /*Font sizing*/
     --fs-h1: 25px;
     --fs-h2: 21.5px;
     --fs-h3: 18.5px;
-    --fs-p: 18.5px;
+    --fs-p:  18.5px;
 
 }
 

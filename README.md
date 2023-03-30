@@ -31,9 +31,9 @@ Female: Mercy Grace Estano
 
 !For css ideas you go here https://www.w3schools.com/howto/default.asp
 
-+:root -> the :root selector matches the document's root element. In HTML, the root element is always the html element and the html element refers to <html></html>.
+!:root -> the :root selector matches the document's root element. In HTML, the root element is always the html element and the html element refers to <html></html>.
 
-+var() -> The var() function is used to insert the value of a CSS variable.
+!var() -> The var() function is used to insert the value of a CSS variable.
 
 @@ Syntax: @@
 

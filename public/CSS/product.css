@@ -57,7 +57,7 @@ th {
     padding: 10px;
 }
 .StatusText{
-    font-family: var();
+    font-family: var(--fstyle);
 }
 .filterText {
     text-align: center;

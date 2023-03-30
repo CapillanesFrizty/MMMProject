@@ -7,8 +7,7 @@
 !ALL JS AND PHP IS STORE IN THE SRC FOLDER
 !Please use comments (hangyo nako na para dili ta mag lisod❤️) <!--for the html--> and /*for the css*/
 !Use meaningful terms in class and Id, make sure that is it related to the element
-@@NOTE: bahalag taas ang term na gi gamit basta puhon puhon dili ta mag lisod og subay@@
-!(copy&paste ra ang Class and Id para dili kapoy type)🤣🤣
+@@NOTE: bahalag taas ang term na gi gamit basta puhon puhon dili ta mag lisod og subay(copy&paste ra ang Class and Id para dili kapoy type)🤣🤣@@
 
 ! -> description, message or a caption
 + -> good practice

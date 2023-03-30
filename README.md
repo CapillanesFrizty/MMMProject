@@ -51,3 +51,8 @@ Ex.
 +body{color: var(--name-of-the-property)} -> please dont be confuse its just a 1 line css 🫣🫣 ✅✅ 
 
 !PS: if a css is declared in the :root{} it is globaly declared, it means that you can access a css declaration in any css file
+
+
+@@Task: @@
+
+!March 31 to April 2: Login, Register, Forgot Password (UI UX only)

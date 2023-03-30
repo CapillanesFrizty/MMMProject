@@ -1,5 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+
 :root {
     /*primary colors*/
-    --pclr1: red;
+    --p-clr1: #228cdc;
+    --p-clr3: #1ECBE1;
+    --p-clr2: #4BD5E7;
+
+    /*Secondary Color*/
+    --s-clr1: #;
+    --s-clr2: #;
+    --s-clr3: #;
+    
+    /*Tertiary Color*/
+    --t-clr1: #;
+    --t-clr2: #;
+    --t-clr3: #;
+
+    /*Primary Font*/
+    --pfont1: 'Domine', serif;
+    --pfont2:
+    --pfont3: 
+
+    /*Font sizing*/
+    --fs-h1: 25px;
+    --fs-h2: 21.5px;
+    --fs-h3: 18.5px;
+    --fs-p: 18.5px;
+
 }
 

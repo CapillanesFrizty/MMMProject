@@ -15,7 +15,6 @@
 + -> good practice
 - -> bad practice
 
-
 !Element refers to <p>this is a sample text</p>
 !tag refers to <p> as opening tag and </p> as the closing tag
 
@@ -29,7 +28,7 @@ Female: Mercy Grace Estano
 !With the intention of upgrading the current manual system into a web-based system, we are proposing Mighty-Mite Motor’s sales system that aims to aid effective and efficient management of vehicle sales. Mighty-Mite Motor’s sales system fully automates the purchasing, sales, order accounting, and customer care functions. The initiative to create a new system that is web-based will help the company to boost customer service delivery and profit. Business information can be stored and managed efficiently and in a more organized manner. 
 
 
-@@ DOCUMENTATIONS: @@
+@@ DOCUMENTATIONS:@@
 
 !For css ideas you go here https://www.w3schools.com/howto/default.asp
 
@@ -54,3 +53,9 @@ Ex.
 +body{color: var(--name-of-the-property)} -> please dont be confuse its just a 1 line css 🫣🫣 ✅✅ 
 
 !PS: if a css is declared in the :root{} it is globaly declared, it means that you can access a css declaration in any css file
+
+!Task:
+
+!March 31, 2023 to April 2, 2023 -> login page (UI UX only)
+!April 3 2023 to April 6 2023 -> Admin pages, i.e., adding of products, add of products form and get orders (UI UX only)
+!April 7 2023 to April 9 2023 -> backend of Admin Pages, Basic create, read, insert, Delete Functionalities

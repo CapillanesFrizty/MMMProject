@@ -3,8 +3,7 @@
 
 @@GUIDLINES:@@
 
-!ALL HTML FILE IS STORE IN THE PUBLIC FOLDER
-!ALL CSS FILE IS STORE IN THE PUBLIC FOLDER
+!ALL HTML FILE AND CSS FILE IS STORE IN THE PUBLIC FOLDER
 !ALL JS AND PHP IS STORE IN THE SRC FOLDER
 !Please use comments (hangyo nako na para dili ta mag lisod❤️) <!--for the html--> and /*for the css*/
 !Use meaningful terms in class and Id, make sure that is it related to the element

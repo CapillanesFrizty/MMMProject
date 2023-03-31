@@ -1,20 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
 
 :root {
-    /*primary colors*/
-    --p-clr1: #228cdc;
-    --p-clr3: #1ECBE1;
-    --p-clr2: #4BD5E7;
+    /*primary colors--Background color--navbg*/
+    --p-clr1: #E14D2A;
+    --p-clr2: white;
+  
 
-    /*Secondary Color*/
-    --s-clr1: #;
-    --s-clr2: #;
-    --s-clr3: #;
+    /*Secondary Color--Hovers*/
+    --s-clr1: #FD841F;
     
-    /*Tertiary Color*/
-    --t-clr1: #;
-    --t-clr2: #;
-    --t-clr3: #;
+    
+    /*Tertiary Color--buttons*/
+    --t-clr1: #3E6D9C;
+    
 
     /*Primary Font*/
     --pfont1: 'Domine', serif;

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root {
     /*primary colors--Background color--navbg*/
@@ -13,6 +14,8 @@
     /*Tertiary Color--buttons*/
     --t-clr1: #3E6D9C;
     
+    /*primary colors*/
+    --pclr1: red;
 
     /*Primary Font*/
     --pfont1: 'Domine', serif;
@@ -25,5 +28,5 @@
     --fs-h3: 18.5px;
     --fs-p:  18.5px;
 
+    --pfont: 'Roboto', sans-serif;
 }
-

@@ -14,13 +14,11 @@
     /*Tertiary Color--buttons*/
     --t-clr1: #3E6D9C;
     
-    /*primary colors*/
-    --pclr1: red;
 
     /*Primary Font*/
     --pfont1: 'Domine', serif;
     --pfont2: 'Poppins',sans-serif;;
-    --pfont3: ;
+    --pfont3: 'Roboto', sans-serif;
 
     /*Font sizing*/
     --fs-h1: 25px;
@@ -28,5 +26,4 @@
     --fs-h3: 18.5px;
     --fs-p:  18.5px;
 
-    --pfont: 'Roboto', sans-serif;
 }

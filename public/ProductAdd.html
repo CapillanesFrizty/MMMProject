@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mighty Mite Motors Product Page</title>
+    <link rel="stylesheet" href="./CSS/ProductAdd.css">
+    <link rel="stylesheet" href="./CSS/rootDeclaration.css">
+</head>
+<body>
+    <!--navigation bar required all pages--->
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <a href="#"><img src="./Pictures/logoMMM.png" alt="MightyMiteMotors.com"></a>
+            </div>
+            <div class="navbar">
+                <div class="close-nav"><button>×</button></div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu-bar">
+                <button><i></i></button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <!-- Content -->
+    </div>
+    <script>
+        const theBody = document.querySelector('body');
+        const openNav = document.querySelector('.menu-bar button');
+        const closeNav = document.querySelector('.close-nav button');
+        const Navbar = document.querySelector('.navbar');
+
+        // function bodyScroll(){
+        //     if(Navbar.classList.contains('show')){
+        //         theBody.classList.add('hide-scroll');
+        //     }
+        //     else if(theBody.classList.contains('hide-scroll')){
+        //         theBody.classList.remove('hide-scroll');
+        //     }
+        // }
+
+        function showHide(){
+            Navbar.classList.toggle('show');
+            // bodyScroll();
+        }
+
+        openNav.onclick = showHide;
+        closeNav.onclick = showHide;
+    </script>
+    <!--End of navbar-->
+    <!--search -->
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search an item..">
+<!--table (changes needed when connected to database)-->
+<table id="myTable">
+  <tr class="header">
+    <th style="width:30%;">Product Code</th>
+    <th style="width:40%;">Product</th>
+    <th style="width:20%;">Status</th>
+    <th style="width:40%;">Date</th>
+   
+  </tr>
+  <tr>
+    <td>Kart</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+</table>
+</body>
+</html>

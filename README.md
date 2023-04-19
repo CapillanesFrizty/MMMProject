@@ -53,7 +53,24 @@ Ex.
 !PS: if a css is declared in the :root{} it is globaly declared, it means that you can access a css declaration in any css file
 
 
+
+@@ Difference between Script element location @@
+
+!If you place the <script> tag in the <head> section, the browser will load the script before displaying the content of the page. This means that the JavaScript code will be executed before the page is fully loaded. This can cause issues if the script depends on elements of the page that have not yet been loaded, such as DOM elements.
+
+!If you place the <script> tag at the end of the <body> section, the browser will load the script after the content of the page has been displayed. This means that the JavaScript code will be executed after the page is fully loaded, ensuring that all the elements that the script depends on are available.
+
++It's a best practice to place <script> tags at the end of the <body> section to ensure that the page loads quickly and that JavaScript code is executed only after all the necessary page elements are loaded. However, there may be cases where you need to place the <script> tag in the <head> section, such as when the script needs to be loaded before the page content is rendered.
+
+
+
 @@Task: @@
 
 !March 31 to April 2: Login, Register, Forgot Password (UI UX only)
 !April 3 to April 6: admin pages(UI UX only)
+
+
+
+
+@@ISSUE:@@
+-form action property and addmodel.php header("Location: <url of productAdd.html>") can't access the html file

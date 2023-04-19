@@ -6,6 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mighty Mite Motors Product Page</title>
+
+  <!-- JQUERY CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+  <!-- javascript for adding a model and Products -->
+  <script src="../src/js/insertModel.js"></script>
+
+  <!-- CSS FILES -->
   <link rel="stylesheet" href="./CSS/ProductAdd.css">
   <link rel="stylesheet" href="./CSS/rootDeclaration.css">
 </head>
@@ -43,33 +52,41 @@
   <!-- add products modal -->
   <div id="id01" class="modal">
     <!-- Modal Content -->
-    <form class="modal-content animate" action="/action_page.php">
+    <form method="post" action="src\php\addModel.php" class="modal-content animate">
 
       <div class="container">
+
+        <!-- MODEL NAME FIELD-->
         <div class="texts">
-          <label for="psw"><b>Products Code:</b></label>
-          <label>the p code</label>
+          <label for="ModelName"><b>Model name</b></label>
+          <input type="text" placeholder="Enter Model name" name="ModelName">
         </div>
 
+        <!-- MODEL DESCRIPTION FIELD-->
         <div class="texts">
-
-          <label for="uname"><b>Product name</b></label>
-          <input type="text" placeholder="Enter Product name" name="uname" required>
+          <label for="description"><b>Model Description</b></label>
+          <input type="text" placeholder="Enter Model Description" name="description" >
         </div>
 
+        <!-- MODEL SRP FIELD -->
         <div class="texts">
-          <label for="psw"><b>Manufactured Date:</b></label>
-          <label>now date</label>
+          <label for="sRp"><b>Suggested Retail Price</b></label>
+          <input type="text" placeholder="Enter Model SRP" name="sRp">
         </div>
 
+
+        <!-- Add/ Cancel Action Buttons -->
         <div class="btns">
-          <button id="addbtn" type="submit">add</button>
-          <button onclick="document.getElementById('id01').style.display='none'" id="cancelbtn" type="submit">Cancel</button>
+          <input id="addbtn" type="submit" value="Add">
+          <button onclick="document.getElementById('id01').style.display='none'" id="cancelbtn"
+            type="submit">Cancel</button>
         </div>
+
       </div>
     </form>
-    
+
   </div>
+
   <!--search -->
   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search an item..">
   <button onclick="document.getElementById('id01').style.display='block'">Add</button>
@@ -79,25 +96,10 @@
       <th style="width:30%;">Product Code</th>
       <th style="width:40%;">Product</th>
       <th style="width:20%;">Status</th>
-      <th style="width:40%;">Date</th>
+      <th style="width:40%;">Date</th
+    </tr>
 
-    </tr>
-    <tr>
-      <td>Kart</td>
-      <td>Germany</td>
-    </tr>
-    <tr>
-      <td>Berglunds snabbkop</td>
-      <td>Sweden</td>
-    </tr>
-    <tr>
-      <td>Island Trading</td>
-      <td>UK</td>
-    </tr>
-    <tr>
-      <td>Koniglich Essen</td>
-      <td>Germany</td>
-    </tr>
+    <tbody id="model_Tbody"></tbody>
   </table>
 
 

@@ -1,90 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mighty Mite Motors Product Page</title>
-    <link rel="stylesheet" href="./CSS/ProductAdd.css">
-    <link rel="stylesheet" href="./CSS/rootDeclaration.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mighty Mite Motors Product Page</title>
+  <link rel="stylesheet" href="./CSS/ProductAdd.css">
+  <link rel="stylesheet" href="./CSS/rootDeclaration.css">
 </head>
+
 <body>
-    <!--navigation bar required all pages--->
-    <header>
-        <div class="wrapper">
-            <div class="logo">
-                <a href="#"><img src="./Pictures/logoMMM.png" alt="MightyMiteMotors.com"></a>
-            </div>
-            <div class="navbar">
-                <div class="close-nav"><button>×</button></div>
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Product</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="menu-bar">
-                <button><i></i></button>
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <!-- Content -->
+  <!--navigation bar required all pages--->
+  <header>
+    <div class="wrapper">
+      <div class="logo">
+        <a href="#"><img src="./Pictures/logoMMM.png" alt="MightyMiteMotors.com"></a>
+      </div>
+      <div class="navbar">
+        <div class="close-nav"><button>×</button></div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu-bar">
+        <button><i></i></button>
+      </div>
     </div>
-    <script>
-        const theBody = document.querySelector('body');
-        const openNav = document.querySelector('.menu-bar button');
-        const closeNav = document.querySelector('.close-nav button');
-        const Navbar = document.querySelector('.navbar');
+  </header>
 
-        // function bodyScroll(){
-        //     if(Navbar.classList.contains('show')){
-        //         theBody.classList.add('hide-scroll');
-        //     }
-        //     else if(theBody.classList.contains('hide-scroll')){
-        //         theBody.classList.remove('hide-scroll');
-        //     }
-        // }
+  <div class="container">
+    <!-- Content -->
+    <h1>MMM: Products</h1>
+  </div>
+  <!--End of navbar-->
 
-        function showHide(){
-            Navbar.classList.toggle('show');
-            // bodyScroll();
-        }
+  <!-- add products modal -->
+  <div id="id01" class="modal">
+    <!-- Modal Content -->
+    <form class="modal-content animate" action="/action_page.php">
 
-        openNav.onclick = showHide;
-        closeNav.onclick = showHide;
-    </script>
-    <!--End of navbar-->
-    <!--search -->
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search an item..">
-<!--table (changes needed when connected to database)-->
-<table id="myTable">
-  <tr class="header">
-    <th style="width:30%;">Product Code</th>
-    <th style="width:40%;">Product</th>
-    <th style="width:20%;">Status</th>
-    <th style="width:40%;">Date</th>
-   
-  </tr>
-  <tr>
-    <td>Kart</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Berglunds snabbkop</td>
-    <td>Sweden</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Koniglich Essen</td>
-    <td>Germany</td>
-  </tr>
-</table>
+      <div class="container">
+        <div class="texts">
+          <label for="psw"><b>Products Code:</b></label>
+          <label>the p code</label>
+        </div>
+
+        <div class="texts">
+
+          <label for="uname"><b>Product name</b></label>
+          <input type="text" placeholder="Enter Product name" name="uname" required>
+        </div>
+
+        <div class="texts">
+          <label for="psw"><b>Manufactured Date:</b></label>
+          <label>now date</label>
+        </div>
+
+        <div class="btns">
+          <button id="addbtn" type="submit">add</button>
+          <button onclick="document.getElementById('id01').style.display='none'" id="cancelbtn" type="submit">Cancel</button>
+        </div>
+      </div>
+    </form>
+    
+  </div>
+  <!--search -->
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search an item..">
+  <button onclick="document.getElementById('id01').style.display='block'">Add</button>
+  <!--table (changes needed when connected to database)-->
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:30%;">Product Code</th>
+      <th style="width:40%;">Product</th>
+      <th style="width:20%;">Status</th>
+      <th style="width:40%;">Date</th>
+
+    </tr>
+    <tr>
+      <td>Kart</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbkop</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Koniglich Essen</td>
+      <td>Germany</td>
+    </tr>
+  </table>
+
+
+  <script>
+    const theBody = document.querySelector('body');
+    const openNav = document.querySelector('.menu-bar button');
+    const closeNav = document.querySelector('.close-nav button');
+    const Navbar = document.querySelector('.navbar');
+
+    // function bodyScroll(){
+    //     if(Navbar.classList.contains('show')){
+    //         theBody.classList.add('hide-scroll');
+    //     }
+    //     else if(theBody.classList.contains('hide-scroll')){
+    //         theBody.classList.remove('hide-scroll');
+    //     }
+    // }
+
+    function showHide() {
+      Navbar.classList.toggle('show');
+      // bodyScroll();
+    }
+
+    openNav.onclick = showHide;
+    closeNav.onclick = showHide;
+
+  </script>
 </body>
+
 </html>

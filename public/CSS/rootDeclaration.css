@@ -9,10 +9,14 @@
 
     /*Secondary Color--Hovers*/
     --s-clr1: #FD841F;
+    --s-clr2: #ffbc84;
+    --s-clr3: #f6d2b4;
     
     
     /*Tertiary Color--buttons*/
     --t-clr1: #3E6D9C;
+    --t-clr2: #4d85bc;
+    --t-clr3: #5fa0e1;
     
 
     /*Primary Font*/
@@ -26,4 +30,5 @@
     --fs-h3: 18.5px;
     --fs-p:  18.5px;
 
+    
 }

@@ -56,7 +56,4 @@ Ex.
 @@Task: @@
 
 !March 31 to April 2: Login, Register, Forgot Password (UI UX only)
-
-
-@@NEW TASK!!!!@@
-@@ April 3 to April 5: admin pages(UI UX only)
+!April 3 to April 6: admin pages(UI UX only)

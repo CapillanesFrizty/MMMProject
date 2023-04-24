@@ -11,3 +11,5 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     
     $result = mysqli_query($con,$query);
 }
+
+header("location: ./public/ProductAdd.html");

@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $model_description = $_POST['description'];
     $model_SRP = $_POST['sRp'];
     
-    $query = "INSERT INTO `model`(`model_Name`, `model_Description`, `SRP`) VALUES ('$model_name','$model_description','$model_SRP')";
+    $query = "INSERT INTO `productmodel`(`modelName`, `modelDescription`, `SRP`) VALUES (`$model_name`,`$model_description`,`$model_SRP`)";
     
     $result = mysqli_query($con,$query);
 }

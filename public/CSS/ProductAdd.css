@@ -221,7 +221,7 @@ header .logo img {
 
 
 /* modal style */
-.modal {
+.modal, .modal2 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -232,18 +232,16 @@ header .logo img {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 10px;
+    padding-top: 60px;
   }
   .texts{
     margin-top: 10px;
-    
   }
-  
   .btns{
     margin-top: 40px;
   }
   #addbtn{
-    background-color:var(--p-clr1);
+    background-color: #04AA6D;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -252,7 +250,7 @@ header .logo img {
     width: 100%;
   }
   #cancelbtn{
-    background-color: var(--t-clr1);
+    background-color: #c01401;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -261,13 +259,12 @@ header .logo img {
     width: 100%;
   }
   /* Modal Content/Box */
-  .modal-content {
+  .modal-content, .modal-content2 {
     background-color: #fefefe;
     margin: 10% auto; /* 15% from the top and centered */
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
     height: 50%;
-
   }
   
   /* The Close Button */

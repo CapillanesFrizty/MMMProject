@@ -1,7 +1,7 @@
 <?php
 require_once('connector.php');
 
-$query ="SELECT * FROM `model`";
+$query ="SELECT * FROM `productmodel`";
 
 $data=array();
 

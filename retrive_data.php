@@ -10,7 +10,7 @@ $result = mysqli_query($con, $query);
 if ($result) {
     while ($row=mysqli_fetch_array($result,MYSQLI_NUM)) {
         array_push($data,array(
-       'id'=>$row[0],
+       'id'=>$row[0], //key and value pairs ni siya assign operator nga => ra
        'model_name'=>$row[1],
        'model_description'=>$row[2],
        'model_SRP'=>$row[3],

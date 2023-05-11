@@ -13,7 +13,8 @@ if ($result) {
        'id'=>$row[0],
        'model_name'=>$row[1],
        'model_description'=>$row[2],
-       'model_SRP'=>$row[3]
+       'model_SRP'=>$row[3],
+       'model_img'=>$row[4]
         ));
     }
 }

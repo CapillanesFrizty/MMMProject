@@ -18,7 +18,6 @@
     $query = "SELECT * FROM `productmodel` WHERE `modelID` = $model_num";
     $result = mysqli_query($con, $query);
 
-
     while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
 
     ?>
@@ -27,7 +26,7 @@
             <div class="container d-flex justify-content-center">
                 <p class="display-3 ms-5">
                     Update Products
-                    <a class="btn btn-danger" href="./public/ProductAdd.html" role="button">Back</a>
+                    <a class="btn btn-danger" href="./public/ProductAdd.php" role="button">Back</a>
                 </p>
             </div>
 

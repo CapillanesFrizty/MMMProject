@@ -5,6 +5,7 @@ $(document).ready(function () {
       $("#model_Tbody").append(`
             <tr>
             <td>  </td>
+            <td> ${this["model_img"]} </td>
             <td> ${this["id"]} </td>
             <td> ${this["model_name"]} </td>
             <td> ${this["model_description"]} </td>

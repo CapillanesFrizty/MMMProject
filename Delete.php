@@ -7,4 +7,4 @@ $query= "DELETE FROM `productmodel` WHERE `modelid` = $model_num";
 
 $result =mysqli_query($con, $query);
 
-header("location: ./public/ProductAdd.html");
+header("location: ./public/ProductAdd.php");

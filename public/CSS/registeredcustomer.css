@@ -232,7 +232,7 @@ header .logo img {
 
 
    /* Items grid */
-  hr{
+   hr{
     height: 5px;
     width: 90%;
  border-style: none;
@@ -287,8 +287,8 @@ header .logo img {
 	margin: 20px auto 0;
 }
 .Item__price{
-	text-align: center;
-	font-family :'Montserrat', sans-serif;
+  text-align: center;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 0.9em;
 	margin-top: 10px;
 	color: #777;
@@ -305,6 +305,7 @@ header .logo img {
 	width: 100%;
 	height: auto;
 }
+
 
 
  /* End of Items grid */
@@ -330,3 +331,20 @@ header .logo img {
     padding: 14px 20px 12px;
 }
   
+
+/*Category List*/
+.cat{
+  
+  align-items: center;
+  text-align: center;
+
+  color: black;
+  flex-direction: row;
+}
+.cat ul{
+  list-style-type:none;
+}
+.cat a{
+  justify-content: space-between;
+  padding-right: 50px;
+}

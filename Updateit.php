@@ -30,18 +30,22 @@
                 </p>
             </div>
 
+            <!-- Update model info form -->
             <div class="container my-auto d-flex justify-content-center">
                 <form action="./updatefunc.php" method="post" class="w-50">
+                    <!-- Model name -->
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Model Name</label>
                         <input type="text" class="form-control" name="ModelName" value="<?php echo $row[1] ?>" />
                     </div>
 
+                    <!-- Model Description -->
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Model Description</label>
                         <input type="text" class="form-control" name="description" value="<?php echo $row[2] ?>" />
                     </div>
 
+                    <!-- Model SRP -->
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Suggested Retail Price</label>
                         <input type="text" class="form-control" name="sRp" value="<?php echo $row[3] ?>" />
@@ -56,5 +60,4 @@
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
-
 </html>

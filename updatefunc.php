@@ -10,6 +10,6 @@ $query = "UPDATE `productmodel` SET `modelName`='$model_name',`modelDescription`
 
 $result = mysqli_query($con, $query);
 
-header("location: public\ProductAdd.html");
+header("location: public\ProductAdd.php");
 
 ?>

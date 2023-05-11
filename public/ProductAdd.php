@@ -70,13 +70,13 @@
       $query = "SELECT * FROM `productmodel`";
       $result = mysqli_query($con, $query);
       if ($result) {
-        while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-          ?>
+        while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {?>
+
           <tr>
             <td> <img src="../images/<?= $row[4] ?>" width="150" height="150" />
             </td>
             <td>
-              <?php echo $row[0] ?>
+              <?php echo "#000".$row[0] ?>
             </td>
             <td>
               <?php echo $row[1] ?>
@@ -85,15 +85,13 @@
               <?php echo $row[2] ?>
             </td>
             <td>
-              <?php echo $row[3] ?>
+              <?php echo "$".$row[3].".00"?>
             </td>
-            <td> <a href="../Delete.php?model_num=<?= $row[0] ?>">Delete</a> </td>
-            <td> <a id="btnupdate" href="../Updateit.php?model-Num=<?= $row[0] ?>">Update</a> </td>
+            <td> <a href="../Delete.php?model_num=<?= $row[0] ?>" role="button" class="btn btn-danger">Delete</a> </td>
+            <td> <a id="btnupdate" href="../Updateit.php?model-Num=<?= $row[0] ?>" role="button" class="btn btn-secondary">Update</a> </td>
           </tr>
-          <?php
-        }
-      }
-      ?>
+
+      <?php }}?>
 
     </tbody>
   </table>

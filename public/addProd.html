@@ -18,18 +18,31 @@
     <div class="container d-flex justify-content-center">
       <p class="display-3 ms-5">
         Add Products
-        <a class="btn btn-danger" href="ProductAdd.html" role="button">Back</a>
+        <a class="btn btn-danger" href="ProductAdd.php" role="button">Back</a>
       </p>
     </div>
 
     <div class="container my-auto d-flex justify-content-center">
       <form action="../addModel.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="model_image">
-        <input type="text" name="model_name">
-        <input type="text" name="model_description">
-        <input type="text" name="model_SRP">
-        <input type="submit" name="submit" value="Add">
-      </form> 
+
+        <div class="form-floating mb-3 ">
+          <input type="Text" class="form-control" id="floatingInput" name="model_name" placeholder="name@example.com">
+          <label for="floatingInput">Model Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="Text" class="form-control" id="floatingInput" name="model_description" placeholder="name@example.com">
+          <label for="floatingInput">Model Description</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="Text" class="form-control" id="floatingInput" name="model_SRP" placeholder="name@example.com">
+          <label for="floatingInput">Model SRP</label>
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Image of the Model:</label>
+          <input class="form-control" type="file" id="formFile" name="model_image">
+        </div>
+        <button class="btn btn-outline-primary" type="submit" name="submit" >Add</button>
+      </form>
     </div>
   </div>
 

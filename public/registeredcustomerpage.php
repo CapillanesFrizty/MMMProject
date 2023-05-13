@@ -70,73 +70,33 @@
 
   <!-- Products Section -->
   <hr>
-  <h2 class="productcategory" id="prodcat">All products</h2>
+  <h2 class="productcategory" id="prodcat">Product Category</h2>
   <div class="Items">
-
-    <div class="Items">
-
-      <div class="Item">
-        <a href="productspecs.html" class="Item__link">
-          <div class="ImageContainer">
-            <img src="./Pictures/car1.png" alt="fast Car1" class="Image">
+    <?php
+    require_once('../connector.php');
+    $query = "SELECT * FROM `productmodel`";
+    $res = mysqli_query($con, $query);
+    if ($res) {
+      while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
+        ?>
+        <div class="card" style="width: 18rem;">
+          <img src="../images/<?= $row[4] ?>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <?= $row[1] ?>
+            </h5>
+            <p class="card-text">
+              <?= $row[2] ?>
+            </p>
+            <a href="../addtocartfunction.php?user_id=1&Model_id=<?= $row[0] ?>" class="btn btn-primary">Add to Cart</a>
           </div>
-          <div class="Item__title">Fast Car 1</div>
-          <div class="Item__price">$3000</div>
-        </a>
-      </div>
+        </div>
 
-      <div class="Item">
-        <a href="productspecs.html" class="Item__link">
-          <div class="ImageContainer">
-            <img src="./Pictures/kart1.png" alt="kart1" class="Image">
-          </div>
-          <div class="Item__title">Fast GoGo kart 1</div>
-          <div class="Item__price">$2000</div>
-        </a>
-      </div>
+        <?php
+      }
+    }
+    ?>
 
-      <div class="Item">
-        <a href="productspecs.html" class="Item__link">
-          <div class="ImageContainer">
-            <img src="./Pictures/mbike1.png" alt="mbike1" class="Image">
-          </div>
-          <div class="Item__title">BMW motorbike</div>
-          <div class="Item__price">$5000</div>
-        </a>
-      </div>
-
-      <div class="Item">
-        <a href="productspecs.html" class="Item__link">
-          <div class="ImageContainer">
-            <img src="./Pictures/manual1.png" alt="manual1" class="Image">
-          </div>
-          <div class="Item__title">Manual Ride-on</div>
-          <div class="Item__price">$1000</div>
-        </a>
-      </div>
-
-      <div class="Item">
-        <a href="productspecs.html" class="Item__link">
-          <div class="ImageContainer">
-            <img src="./Pictures/mbike1.png" alt="mbike2" class="Image">
-          </div>
-          <div class="Item__title">BMW motorbike 2 red</div>
-          <div class="Item__price">$5000</div>
-        </a>
-      </div>
-
-      <div class="Item">
-        <a href="productspecs.html" class="Item__link">
-          <div class="ImageContainer">
-            <img src="./Pictures/car1.png" alt="car2" class="Image">
-          </div>
-          <div class="Item__title">Red Car fastest</div>
-          <div class="Item__price">$6000</div>
-        </a>
-      </div>
-
-
-    </div>
   </div>
   <!--footer-->
 

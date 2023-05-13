@@ -33,9 +33,9 @@
         <div class="close-nav"><button>×</button></div>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Product</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Placed Orders</a></li>
+            <li><a href="#">Products</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
@@ -43,6 +43,10 @@
       <div class="menu-bar">
         <button><i></i></button>
       </div>
+    </div>
+    <div class="menu-bar">
+      <button><i></i></button>
+    </div>
     </div>
   </header>
 

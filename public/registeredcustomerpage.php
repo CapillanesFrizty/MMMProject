@@ -15,10 +15,14 @@
   <!-- CSS FILES -->
   <link rel="stylesheet" href="./CSS/registeredcustomer.css">
   <link rel="stylesheet" href="./CSS/rootDeclaration.css">
+
+  <!-- bootsrap CDN #1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <body>
-  <!--navigation bar required all pages--->
   <!--navigation bar required all pages--->
   <header>
     <div class="wrapper">
@@ -50,10 +54,7 @@
   <button type="search">Search</button>
   <!--End of Search bar-->
 
-  <!--End of Search bar-->
-
   <!--Category List-->
-
   <div class="cat">
     <h3>Choose a Category</h3>
 
@@ -98,9 +99,9 @@
     ?>
 
   </div>
+  
+  
   <!--footer-->
-
-
   <footer class="footer-distributed" id="contact">
 
     <div class="footer-left">
@@ -123,6 +124,12 @@
     </div>
 
   </footer>
+
+
+  <!-- bootstrap CDN #2 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
 </body>
 

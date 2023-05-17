@@ -19,15 +19,15 @@
           data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-75" src="../images/IMG-645fb259092ea0.71047698.png" alt="" data-bs-interval="1000">
+              <img class="d-block w-75" src="../images/IMG-645fb259092ea0.71047698.png" alt="" data-bs-interval="100">
 
             </div>
             <div class="carousel-item">
-              <img class="d-block w-75" src="../images/IMG-645fb26edbc9e5.30530976.png" alt="" data-bs-interval="1000">
+              <img class="d-block w-75" src="../images/IMG-645fb26edbc9e5.30530976.png" alt="" data-bs-interval="500">
 
             </div>
             <div class="carousel-item">
-              <img class="d-block w-75" src="../images/IMG-645fb38bba47c6.68522855.png" alt="" data-bs-interval="1000">
+              <img class="d-block w-75" src="../images/IMG-645fb38bba47c6.68522855.png" alt="" data-bs-interval="500">
             </div>
           </div>
         </div>
@@ -42,20 +42,20 @@
             <img style="width: 15%;" src="./Pictures/logoMMM.png" alt="">
           </div>
 
-          <form method="POST">
+
+          <form method="POST" action="../login.php">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Username</label>
-              <input type="email" class="form-control" id="exampleInputEmail1">
+              <input type="text" class="form-control" id="exampleInputEmail1" name="username">
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control">
+              <input type="password" class="form-control" name="pass">
             </div>
             <div class="wrapper">
               <span>Dont have an Account? <a class="link-primary link-offset-2 link-underline-opacity-0"
                   href="registerpage.html">Create An Account</a></span>
             </div>
-
             <p><a href="./forgotPassword.html" class="link-primary link-offset-2 link-underline-opacity-0">Forgot
                 Passowrd</a></p>
             <button type="submit" class="btn btn-primary mb-3">Log in</button>

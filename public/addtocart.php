@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <script src="https://use.fontawesome.com/releases/vVERSION/js/all.js" data-mutate-approach="sync"></script>
+
     <title>Hello, world!</title>
 </head>
 
@@ -58,68 +58,87 @@
         </div>
     </nav>
 
+    <div class="container">
 
-    <table class="table w-75 mx-auto mt-5">
-        <thead>
-            <tr>
-                <th scope="col">Customer Lname</th>
-                <th scope="col">Model ID</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
-            </tr>
-        </thead>
 
-        <tbody>
-            <?php
-            require_once('../connector.php');
+        <table class="table w-75 mx-auto mt-5">
+            <thead>
+                <tr>
+                    <th scope="col" style="width:1%">
+                        <input type="checkbox" id="checkall">
+                    </th>
+                    <th scope="col">Customer Lname</th>
+                    <th scope="col">Model ID</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
 
-            $uid = $_GET['uid'];
+            <form action="../placeorder.php" method="post">
+                <tbody>
+                    <?php
+                    require_once('../connector.php');
 
-            $query = "SELECT `model_id`, `cus_id`, `quantity`, `price`,cus.first_name,cus.last_name FROM `cart` JOIN customer as cus on cart.cus_id= cus.cusID";
+                    $uid = $_GET['uid'];
 
-            $res = mysqli_query($con, $query);
-            if ($res) {
-                while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
-                    if ($row[1] == $uid) {
-                        ?>
 
-                        <tr>
-                            <td>
-                                <?= $row[5] ?>
-                            </td>
-                            <td>
-                                <?= $row[0] ?>
-                            </td>
-                            <td>
-                                <?= $row[2] ?>
-                            </td>
-                            <td>
-                                <?= $row[3] ?>
-                            </td>
-                        </tr>
+                    $query = "SELECT `model_id`, `cus_id`, `quantity`, `price`,cus.first_name,cus.last_name FROM `cart` JOIN customer as cus on cart.cus_id= cus.cusID";
 
-                        <?php
-                    } else {
-                        ?>
-                        <tr>
-                            <td>
-                                <p>No Items</p>
-                            </td>
-                        </tr>
 
-                        <?php
-                        break;
+                    $res = mysqli_query($con, $query);
+                    if ($res) {
+                        while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
+                            if ($row[1] == $uid) {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <input class="checkItem" type="checkbox" value="<?= $row[0] ?>" name="itemid[]">
+                                    </td>
+                                    <td>
+                                        <?= $row[5] ?>
+                                    </td>
+                                    <td>
+                                        <?= $row[0] ?>
+                                    </td>
+                                    <td>
+                                        <?= $row[2] ?>
+                                    </td>
+                                    <td>
+                                        <?= $row[3] ?>
+                                    </td>
+                                </tr>
+                                <?php
+                            } else {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <p>No Items</p>
+                                    </td>
+                                </tr>
+
+                                <?php
+                                break;
+                            }
+                        }
                     }
-                }
-            }
-            ?>
 
 
-        </tbody>
+                    ?>
+                </tbody>
+                <div class="d-flex justify-content-end me-5">
+                    <a type="submit" class="btn btn-primary" name="placeorder" role="button"
+                        value="Place Order">PlaceOrder</a>
+                    <a role="Button" class="btn btn-danger ms-3 me-5">Cancel</a>
+                </div>
+            </form>
+        </table>
 
-    </table>
+    </div>
 
 
+
+
+    <script type="text/javascript" src="./UI Behavior/checkbox.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

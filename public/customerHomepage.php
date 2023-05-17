@@ -71,7 +71,7 @@
     if ($res) {
       while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
         ?>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 10rem">
           <img src="../images/<?= $row[4] ?>" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">

@@ -30,7 +30,8 @@
             <div class="d-flex mx-5 align-middle" id="navbarNav">
                 <ul class="navbar-nav me-5">
                     <li class="nav-item">
-                        <a class="nav-link" href="./customerHomepage.php#hompg?">Home</a>
+                        <a class="nav-link"
+                            href="./public/registeredcustomerpage.php?uid=<?php echo $userid ?>#hompg">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./customerHomepage.php#prodcat">Products</a>
@@ -73,22 +74,22 @@
                     <th scope="col">Price</th>
                 </tr>
             </thead>
+            <tbody>
+                <?php
+                require_once('../connector.php');
 
-            <form action="../placeorder.php" method="post">
-                <tbody>
-                    <?php
-                    require_once('../connector.php');
+                $userid = $_GET['uid'];
+                $query = "SELECT `model_id`, `cus_id`, `quantity`, `price`,cus.first_name,cus.last_name FROM `cart` JOIN customer as cus on cus_id= cus.cusID WHERE `cus_id` = $userid";
 
-                    $uid = $_GET['uid'];
-
-
-                    $query = "SELECT `model_id`, `cus_id`, `quantity`, `price`,cus.first_name,cus.last_name FROM `cart` JOIN customer as cus on cart.cus_id= cus.cusID";
-
-
-                    $res = mysqli_query($con, $query);
-                    if ($res) {
+                $res = mysqli_query($con, $query);
+                if ($res) {
+                    if (mysqli_num_rows($res)==0) {
+                        echo '<tr>
+                            <td>NO ITEM FOUND<td>
+                            </tr>';
+                    } else {
                         while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
-                            if ($row[1] == $uid) {
+                            if ($row[1] == $userid) {
                                 ?>
                                 <tr>
                                     <td>
@@ -108,33 +109,20 @@
                                     </td>
                                 </tr>
                                 <?php
-                            } else {
-                                ?>
-                                <tr>
-                                    <td>
-                                        <p>No Items</p>
-                                    </td>
-                                </tr>
-
-                                <?php
-                                break;
                             }
                         }
                     }
+                }
+                ?>
 
-
-                    ?>
-                </tbody>
-                <div class="d-flex justify-content-end me-5">
-                    <a type="submit" class="btn btn-primary" name="placeorder" role="button"
-                        value="Place Order">PlaceOrder</a>
-                    <a role="Button" class="btn btn-danger ms-3 me-5">Cancel</a>
-                </div>
-            </form>
+            </tbody>
         </table>
 
+        <div class="d-flex justify-content-end me-5">
+            <a type="submit" class="btn btn-primary" name="placeorder" role="button" value="Place Order">PlaceOrder</a>
+            <a role="Button" class="btn btn-danger ms-3 me-5">Cancel</a>
+        </div>
     </div>
-
 
 
 

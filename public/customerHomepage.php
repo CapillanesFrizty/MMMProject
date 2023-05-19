@@ -29,17 +29,48 @@
       <div class="logo">
         <a href="#"><img src="./Pictures/logoMMM.png" alt="MightyMiteMotors.com"></a>
       </div>
-      <div class="navbar">
-        <div class="close-nav"><button></button></div>
-        <nav>
-          <ul>
-            <li><a href="#hompg">Home</a></li>
-            <li><a href="#hompg">About</a></li>
-            <li><a href="#prodcat">Product</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid">
+          <div class="container">
+            <a class="navbar-brand" href="#">
+              bootstrap
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="d-flex mx-5 align-middle" id="navbarNav">
+            <ul class="navbar-nav me-5">
+              <li class="nav-item">
+                <a class="nav-link" href="./customerHomepage.php#hompg?">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./customerHomepage.php#prodcat">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./customerHomepage.php#contact">Contact</a>
+              </li>
+
+              <button type="button" class="btn btn-outline-secondary position-relative ms-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                  <span class="visually-hidden">New alerts</span>
+                </span>
+              </button>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
       <div class="menu-bar">
         <button class="button4" onclick="window.location.href='registerpage.html'">Sign Up Now</button>
       </div>
@@ -190,7 +221,7 @@
 
   </footer>
 
-  
+
   <!-- bootstrap CDN #2 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

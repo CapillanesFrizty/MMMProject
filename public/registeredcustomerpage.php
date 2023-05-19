@@ -1,3 +1,6 @@
+<?php
+$userid = $_GET['uid'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,30 +25,49 @@
 
 </head>
 
+
 <body>
   <!--navigation bar required all pages--->
-  <header>
-    <div class="wrapper">
-      <div class="logo">
-        <a href="#"><img src="./Pictures/logoMMM.png" alt="MightyMiteMotors.com"></a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid">
+      <div class="container">
+        <a href="#"><img src="./Pictures/logoMMM.png" alt="MightyMiteMotors.com" style="width: 8%"></a>
       </div>
-      <div class="navbar">
-        <div class="close-nav"><button></button></div>
-        <nav>
-          <ul>
-            <li><a href="#hompg">Home</a></li>
-            <li><a href="#hompg">About</a></li>
-            <li><a href="#prodcat">Product</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#contact">Account</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="menu-bar">
-        <button class="button4" onclick="window.location.href='registerpage.html'">Sign Up Now</button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex mx-5 align-middle" id="navbarNav">
+        <ul class="navbar-nav me-5">
+          <li class="nav-item">
+            <a class="nav-link" href="./public/registeredcustomerpage.php?uid=<?php echo $userid ?>">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+              href="./public/registeredcustomerpage.php?uid=<?php echo $userid ?>">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="registeredcustomerpage.php#prodcat"></a>
+          </li>
+
+          <button type="button" class="btn btn-outline-secondary position-relative ms-3">
+            <a href="./addtocart.php?uid=<?php echo $userid ?>">
+              <img src="./Pictures/shopping-cart.png" alt="cart" style="width: 15px">
+
+              <span
+                class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                <span class="visually-hidden">New alerts</span>
+              </span>
+            </a>
+          </button>
+        </ul>
       </div>
     </div>
-  </header>
+  </nav>
+
   <!--End of navbar-->
 
 
@@ -55,7 +77,7 @@
   <!--End of Search bar-->
 
   <!--Category List-->
-  <div class="cat">
+  <!-- <div class="cat">
     <h3>Choose a Category</h3>
 
     <ul>
@@ -65,14 +87,16 @@
       <a><i class="fa-duotone fa-moped"></i>Motor bikes</a>
 
     </ul>
-  </div>
+  </div> -->
   <!--End of Category list-->
 
 
   <!-- Products Section -->
+
   <hr>
   <h2 class="productcategory" id="prodcat">Product Category</h2>
   <div class="Items">
+
     <?php
     require_once('../connector.php');
     $query = "SELECT * FROM `productmodel`";
@@ -89,7 +113,8 @@
             <p class="card-text">
               <?= $row[2] ?>
             </p>
-            <a href="../addtocartfunction.php?user_id=1&Model_id=<?= $row[0] ?>" class="btn btn-primary">Add to Cart</a>
+            <a href="../addtocartfunction.php?uid=<?php echo $userid ?>&Model_id=<?= $row[0] ?>" class="btn btn-primary">Add
+              to Cart</a>
           </div>
         </div>
 
@@ -99,8 +124,8 @@
     ?>
 
   </div>
-  
-  
+
+
   <!--footer-->
   <footer class="footer-distributed" id="contact">
 

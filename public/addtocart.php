@@ -1,3 +1,6 @@
+<?php
+$userid = $_GET['uid'];
+?>
 <!doctype html>
 <html lang="en">
 
@@ -30,17 +33,16 @@
             <div class="d-flex mx-5 align-middle" id="navbarNav">
                 <ul class="navbar-nav me-5">
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="./public/registeredcustomerpage.php?uid=<?php echo $userid ?>#hompg">Home</a>
+                        <a class="nav-link" href="./registeredcustomerpage.php?uid=<?= $userid ?>#hompg">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./customerHomepage.php#prodcat">Products</a>
+                        <a class="nav-link" href="./registeredcustomerpage.php?uid=<?= $userid ?>">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="./registeredcustomerpage.php?uid=<?= $userid ?>">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./customerHomepage.php#contact">Contact</a>
+                        <a class="nav-link" href="./registeredcustomerpage.php?uid=<?= $userid ?>">Contact</a>
                     </li>
 
                     <button type="button" class="btn btn-outline-secondary position-relative ms-3">
@@ -60,73 +62,68 @@
     </nav>
 
     <div class="container">
+        <form action="../placeorder.php?uid=<?= $userid ?>" method="POST">
+            <table class="table w-75 mx-auto mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width:1%">
+                            <input type="checkbox" id="checkall" onclick="check(this)">
+                        </th>
+                        <th scope="col">Customer Lname</th>
+                        <th scope="col">Model ID</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
 
-
-        <table class="table w-75 mx-auto mt-5">
-            <thead>
-                <tr>
-                    <th scope="col" style="width:1%">
-                        <input type="checkbox" id="checkall">
-                    </th>
-                    <th scope="col">Customer Lname</th>
-                    <th scope="col">Model ID</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                require_once('../connector.php');
-
-                $userid = $_GET['uid'];
-                $query = "SELECT `model_id`, `cus_id`, `quantity`, `price`,cus.first_name,cus.last_name FROM `cart` JOIN customer as cus on cus_id= cus.cusID WHERE `cus_id` = $userid";
-
-                $res = mysqli_query($con, $query);
-                if ($res) {
-                    if (mysqli_num_rows($res)==0) {
-                        echo '<tr>
+                <tbody>
+                    <?php
+                    require_once('../connector.php');
+                    $query = "SELECT `model_id`, `cus_id`, `quantity`, `price`,cus.first_name,cus.last_name FROM `cart` JOIN customer as cus on cus_id= cus.cusID WHERE `cus_id` = $userid";
+                    $res = mysqli_query($con, $query);
+                    if ($res) {
+                        if (mysqli_num_rows($res) == 0) {
+                            echo '<tr style=" colspan:4">
                             <td>NO ITEM FOUND<td>
                             </tr>';
-                    } else {
-                        while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
-                            if ($row[1] == $userid) {
-                                ?>
-                                <tr>
-                                    <td>
-                                        <input class="checkItem" type="checkbox" value="<?= $row[0] ?>" name="itemid[]">
-                                    </td>
-                                    <td>
-                                        <?= $row[5] ?>
-                                    </td>
-                                    <td>
-                                        <?= $row[0] ?>
-                                    </td>
-                                    <td>
-                                        <?= $row[2] ?>
-                                    </td>
-                                    <td>
-                                        <?= $row[3] ?>
-                                    </td>
-                                </tr>
-                                <?php
+                        } else {
+                            while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
+                                if ($row[1] == $userid) {
+                                    ?>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" value="<?= $row[0] ?>" name="itemid[]">
+                                        </td>
+                                        <td>
+                                            <?= $row[5] ?>
+                                        </td>
+                                        <td>
+                                            <?= $row[0] ?>
+                                        </td>
+                                        <td>
+                                            <?= $row[2] ?>
+                                        </td>
+                                        <td>
+                                            <?= $row[3] ?>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
                             }
                         }
                     }
-                }
-                ?>
-
-            </tbody>
-        </table>
-
-        <div class="d-flex justify-content-end me-5">
-            <a type="submit" class="btn btn-primary" name="placeorder" role="button" value="Place Order">PlaceOrder</a>
-            <a role="Button" class="btn btn-danger ms-3 me-5">Cancel</a>
-        </div>
+                    ?>
+                    <div class="d-flex justify-content-end me-5">
+                        <input class="btn btn-primary" type="submit" value="Check Out" name="submit">
+                        <a role="Button" class="btn btn-danger ms-3 me-5">Cancel</a>
+                    </div>
+                </tbody>
+            </table>
+        </form>
     </div>
 
 
-
-    <script type="text/javascript" src="./UI Behavior/checkbox.js"></script>
+    <script src="./UI Behavior/checkall.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

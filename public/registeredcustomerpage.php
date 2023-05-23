@@ -40,17 +40,17 @@ $userid = $_GET['uid'];
       <div class="d-flex mx-5 align-middle" id="navbarNav">
         <ul class="navbar-nav me-5">
           <li class="nav-item">
-            <a class="nav-link" href="./public/registeredcustomerpage.php?uid=<?php echo $userid ?>">Home</a>
+            <a class="nav-link" href="./registeredcustomerpage.php?uid=<?php echo $userid ?>">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"
-              href="./public/registeredcustomerpage.php?uid=<?php echo $userid ?>">Products</a>
+              href="./registeredcustomerpage.php?uid=<?php echo $userid ?>">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="./registeredcustomerpage.php?uid=<?=$userid?>">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="registeredcustomerpage.php#prodcat"></a>
+            <a class="nav-link" href="./registeredcustomerpage.php#prodcat"></a>
           </li>
 
           <button type="button" class="btn btn-outline-secondary position-relative ms-3">

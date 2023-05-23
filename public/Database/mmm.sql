@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2023 at 06:12 PM
+-- Generation Time: May 23, 2023 at 01:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -34,6 +34,18 @@ CREATE TABLE `cart` (
   `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`model_id`, `cus_id`, `quantity`, `price`) VALUES
+(10, 2, 3, 200),
+(11, 2, 3, 200),
+(10, 1, 3, 200),
+(10, 1, 3, 200),
+(10, 1, 3, 200),
+(11, 1, 3, 200);
+
 -- --------------------------------------------------------
 
 --
@@ -56,7 +68,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`cusID`, `first_name`, `last_name`, `username`, `password`, `email`, `contact`, `address`) VALUES
-(1, 'John Fritz', 'Capillanes', 'Jcap', '1234jcap', 'Jcap@gmail.com', '0912345123', 'Davao');
+(1, 'John Fritz', 'Capillanes', 'Jcap', '1234jcap', 'Jcap@gmail.com', '0912345123', 'Davao'),
+(2, 'smith', 'john', 'johndoe', '3643johndoe', 'johndoe@edu.ph', '12343212123', 'UK, London');
 
 -- --------------------------------------------------------
 
@@ -68,8 +81,32 @@ CREATE TABLE `orders` (
   `orderNum` int(11) NOT NULL,
   `cusID` int(11) NOT NULL,
   `prodID` int(11) NOT NULL,
-  `orderDate` varchar(250) NOT NULL
+  `orderDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`orderNum`, `cusID`, `prodID`, `orderDate`) VALUES
+(14, 1, 11, '0000-00-00'),
+(15, 1, 10, '0000-00-00'),
+(16, 1, 11, '2023-05-20'),
+(17, 1, 10, '0000-00-00'),
+(18, 1, 10, '2023-05-20'),
+(19, 1, 10, '0000-00-00'),
+(20, 1, 10, '0000-00-00'),
+(21, 1, 11, '0000-00-00'),
+(22, 1, 10, '2023-05-20'),
+(23, 1, 11, '0000-00-00'),
+(24, 1, 10, '0000-00-00'),
+(25, 1, 10, '0000-00-00'),
+(26, 1, 10, '0000-00-00'),
+(27, 1, 10, '0000-00-00'),
+(28, 1, 10, '0000-00-00'),
+(29, 1, 11, '2023-05-20'),
+(30, 1, 10, '2023-05-20'),
+(31, 1, 10, '2023-05-20');
 
 -- --------------------------------------------------------
 
@@ -104,6 +141,21 @@ INSERT INTO `productmodel` (`modelID`, `modelName`, `modelDescription`, `SRP`, `
 (9, 'speed69', 'fastest macqueen', 300, 'IMG-645fb259092ea0.71047698.png'),
 (10, 'speed01', 'fastest', 200, 'IMG-645fb26edbc9e5.30530976.png'),
 (11, 'car300', 'classic vintage car', 200, 'IMG-645fb38bba47c6.68522855.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `purchase`
+--
+
+CREATE TABLE `purchase` (
+  `invoiceNum` int(11) NOT NULL,
+  `CusID` int(11) NOT NULL,
+  `ProductID` int(11) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `SubPrice` int(11) NOT NULL,
+  `date` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -141,13 +193,13 @@ ALTER TABLE `productmodel`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `cusID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cusID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderNum` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `orderNum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `product`

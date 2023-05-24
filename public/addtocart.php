@@ -1,5 +1,9 @@
 <?php
 $userid = $_GET['uid'];
+require_once('../connector.php');
+$query = "SELECT `cartNum`, `model_id`, `cus_id`, `quantity`, `price`,cus.first_name,cus.last_name FROM `cart` JOIN customer as cus on cus_id= cus.cusID WHERE `cus_id` = $userid";
+$res = mysqli_query($con, $query);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -62,63 +66,62 @@ $userid = $_GET['uid'];
     </nav>
 
     <div class="container">
-        <form action="../placeorder.php?uid=<?= $userid ?>" method="POST">
-            <table class="table w-75 mx-auto mt-5">
-                <thead>
-                    <tr>
-                        <th scope="col" style="width:1%">
-                            <input type="checkbox" id="checkall" onclick="check(this)">
-                        </th>
-                        <th scope="col">Customer Lname</th>
-                        <th scope="col">Model ID</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                    </tr>
-                </thead>
+        <table class="table w-75 mx-auto mt-5">
+            <thead>
+                <tr>
+                    <th scope="col" style="width:1%">
+                        <input type="checkbox" id="checkall" onclick="check(this)">
+                    </th>
+                    <th scope="col">Customer Lname</th>
+                    <th scope="col">Model ID</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
 
-                <tbody>
-                    <?php
-                    require_once('../connector.php');
-                    $query = "SELECT `model_id`, `cus_id`, `quantity`, `price`,cus.first_name,cus.last_name FROM `cart` JOIN customer as cus on cus_id= cus.cusID WHERE `cus_id` = $userid";
-                    $res = mysqli_query($con, $query);
-                    if ($res) {
-                        if (mysqli_num_rows($res) == 0) {
-                            echo '<tr style=" colspan:4">
+            <?php
+            if ($res) {
+                if (mysqli_num_rows($res) == 0) {
+                    echo '<tr style="colspan:5;">
                             <td>NO ITEM FOUND<td>
                             </tr>';
-                        } else {
-                            while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
-                                if ($row[1] == $userid) {
-                                    ?>
+                } else {
+                    while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
+                        if ($row[2] == $userid) {
+                            ?>
+                            <tbody>
+                                <form action="../placeorder.php?uid=<?= $userid ?>&quantity=<?= $row[3] ?>&model_ID=<?= $row[1] ?>" method="POST">
                                     <tr>
                                         <td>
-                                            <input type="checkbox" value="<?= $row[0] ?>" name="itemid[]">
+                                            <input onclick='enablebtn()' id="item" type="checkbox" value="<?= $row[0] ?>"
+                                                name="itemid[]">
                                         </td>
                                         <td>
-                                            <?= $row[5] ?>
+                                            <?= $row[6] . ',' . $row[5] ?>
                                         </td>
                                         <td>
-                                            <?= $row[0] ?>
-                                        </td>
-                                        <td>
-                                            <?= $row[2] ?>
+                                            <?= $row[1] ?>
                                         </td>
                                         <td>
                                             <?= $row[3] ?>
                                         </td>
+                                        <td>
+                                            <?= $row[4] ?>
+                                        </td>
                                     </tr>
                                     <?php
-                                }
-                            }
                         }
                     }
-                    ?>
-                    <div class="d-flex justify-content-end me-5">
-                        <input class="btn btn-primary" type="submit" value="Check Out" name="submit">
-                        <a role="Button" class="btn btn-danger ms-3 me-5">Cancel</a>
-                    </div>
-                </tbody>
-            </table>
+                }
+            }
+            ?>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-end me-5">
+            <input class="btn btn-primary" type="submit" value="Check Out" name="submit" id="sub" disabled>
+            <a role="Button" class="btn btn-danger ms-3 me-5" id="delbtn"
+                href="./registeredcustomerpage.php?uid=<?= $userid ?>">Cancel</a>
+        </div>
         </form>
     </div>
 

@@ -33,10 +33,9 @@
         <div class="close-nav"><button>×</button></div>
         <nav>
           <ul>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Placed Orders</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="AdminMainPage.php">Products</a></li>
+            <li><a href="PlaceOrderManagement.php">Placed Orders</a></li>
+            <li><a href="reportsandgraph.php">Reports</a></li>
           </ul>
         </nav>
       </div>

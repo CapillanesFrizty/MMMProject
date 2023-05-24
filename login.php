@@ -12,7 +12,7 @@ if ($result) {
         if ($row[3] === $uname && $row[4]=== $pass) {
             header("location: ./public/registeredcustomerpage.php?uid=$row[0]");
         } else {
-             
+            header("location: ./public/login.html");
         }
 
     }

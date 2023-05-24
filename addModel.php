@@ -33,7 +33,9 @@ if (isset($_POST['submit']) && isset($_FILES['model_image'])) {
                 $model_description = $_POST['model_description'];
                 $model_SRP = $_POST['model_SRP'];
 
-                $query = "INSERT INTO `productmodel`(`modelName`, `modelDescription`, `SRP`, `img`) VALUES ('$model_name','$model_description','$model_SRP','$new_img_name')";
+                $srp=$model_SRP + 50;
+
+                $query = "INSERT INTO `productmodel`(`modelName`, `modelDescription`, `SRP`, `img`) VALUES ('$model_name','$model_description','$srp','$new_img_name')";
                 
                 mysqli_query($con,$query);
                 header("location: ./public/ProductAdd.php?message=Model was add Successufuly");

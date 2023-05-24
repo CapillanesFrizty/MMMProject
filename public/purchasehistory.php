@@ -53,7 +53,7 @@ $userid = $_GET['uid'];
                 <li>
                   <a class="dropdown-item" href="purchasehistory.php?uid=<?= $userid ?>">My Purchase</a>
                 </li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
+                <li><a class="dropdown-item" href="./customerHomepage.php">Logout</a></li>
               </ul>
             </li>
           </ul>

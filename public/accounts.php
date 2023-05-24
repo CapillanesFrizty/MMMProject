@@ -51,7 +51,7 @@ $userid = $_GET['uid'];
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./accounts.php?uid=<?= $userid ?>">Profile</a></li>
               <li><a class="dropdown-item" href="./purchasehistory.php?uid=<?= $userid ?>">Transaction history</a></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
+              <li><a class="dropdown-item" href="./customerHomepage.php">Logout</a></li>
             </ul>
           </li>
         </ul>

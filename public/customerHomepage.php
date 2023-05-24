@@ -12,9 +12,6 @@
   <!-- JQUERY CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-  <!-- CSS FILES -->
-  <link rel="stylesheet" href="./CSS/customerHomepage.css">
-  <link rel="stylesheet" href="./CSS/rootDeclaration.css">
 
   <!-- bootsrap CDN #1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,62 +20,67 @@
 </head>
 
 <body>
-  <!--navigation bar required all pages--->
+
   <header>
-    <div class="wrapper">
-      <div class="logo">
-        <a href="#"><img src="./Pictures/logoMMM.png" alt="MightyMiteMotors.com"></a>
-      </div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <div class="container-fluid">
-          <div class="container">
-            <a class="navbar-brand" href="#">
-              bootstrap
-            </a>
-          </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="d-flex mx-5 align-middle" id="navbarNav">
-            <ul class="navbar-nav me-5">
-              <li class="nav-item">
-                <a class="nav-link" href="./customerHomepage.php#hompg?">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./customerHomepage.php#prodcat">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./customerHomepage.php#contact">Contact</a>
-              </li>
-
-              <button type="button" class="btn btn-outline-secondary position-relative ms-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                </svg>
-                <span
-                  class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                  <span class="visually-hidden">New alerts</span>
-                </span>
-              </button>
-            </ul>
-          </div>
+    <nav class="navbar navbar-expand-lg bg-warning">
+      <div class="container-fluid">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./Pictures/logoMMM.png" alt="mmm" width="55" height="55" />
+          </a>
         </div>
-      </nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse me-5" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-dark" aria-current="page"
+                href="registeredcustomerpage.php?uid=<?= $userid ?>">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="registeredcustomerpage.php?uid=<?= $userid ?>">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="registeredcustomerpage.php?uid=<?= $userid ?>">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="registeredcustomerpage.php?uid=<?= $userid ?>">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Account
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="./loginpage.html">Log in</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./registerpage.html">Signup</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
 
-      <div class="menu-bar">
-        <button class="button4" onclick="window.location.href='registerpage.html'">Sign Up Now</button>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
+  
+  <div id="myPopup" class="popup">
+    <div class="popup-content">
+      <h1>
+        Login Now
+      </h1>
+      <p>To see more amazing ride-on toy cars</p>
 
-  <!--End of navbar-->
-
+      <a class="btn btn-primary">
+        Login
+      </a>
+    </div>
+  </div>
   <!--Start of homapage content-->
   <div class="container" id="hompg">
     <div class="image">
@@ -93,49 +95,43 @@
 
   <!-- Products Section -->
   <hr>
-  <h2 class="productcategory" id="prodcat">Product Category</h2>
-  <div class="Items">
-    <?php
-    require_once('../connector.php');
-    $query = "SELECT * FROM `productmodel`";
-    $res = mysqli_query($con, $query);
-    if ($res) {
-      while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
-        ?>
-        <div class="card" style="width: 10rem">
-          <img src="../images/<?= $row[4] ?>" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">
-              <?= $row[1] ?>
-            </h5>
-            <p class="card-text">
-              <?= $row[2] ?>
-            </p>
-            <a href="../addtocartfunction.php?user_id=1&Model_id=<?= $row[0] ?>" class="btn btn-primary">Add to Cart</a>
+  <div class="container">
+
+    <p class="display-4">Products</p>
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-evenly">
+      <?php
+      require_once('../connector.php');
+      $query = "SELECT * FROM `productmodel`";
+      $res = mysqli_query($con, $query);
+      if ($res) {
+        while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
+          ?>
+
+          <div class="card" style="width: 18rem;">
+            <img src="../images/<?= $row[4] ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                <?= $row[1] ?>
+              </h5>
+              <p class="card-text">
+                <?= $row[2] ?>
+              </p>
+              <a href="./productspecs.php?uid=<?php echo $userid ?> &Model_id=<?= $row[0] ?>" class="btn btn-primary">View
+                Item</a>
+            </div>
           </div>
-        </div>
 
-        <?php
+          <?php
+        }
       }
-    }
-    ?>
+      ?>
 
+    </div>
   </div>
   <!-- End Products Section -->
 
   <!--pop up Login / modal-->
-  <div id="myPopup" class="popup">
-    <div class="popup-content">
-      <h1>
-        Login Now
-      </h1>
-      <p>To see more amazing ride-on toy cars</p>
 
-      <button id="closePopup" onclick="window.location.href='loginpage.html'">
-        Login
-      </button>
-    </div>
-  </div>
 
 
 
@@ -191,7 +187,6 @@
       }
     });
   </script>
-
   <!--end of pop up Login-->
 
   <!--footer-->

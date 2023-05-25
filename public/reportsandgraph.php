@@ -114,9 +114,11 @@
         </div>
     </div>
 
-    <footer class="footer mt-auto py-1 bg-light">
-        <p class=" pt-1 text-center">Made by Big Boy ❤️❤️</p>
-    </footer>
+   <!-- Footer -->
+  <footer  Style="background-color: #474e5d; color:white; "class="footer">
+    <p class="lead text-center p-1 fs-7">Mighty Mite Motors &copy; 2023</p>
+  </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

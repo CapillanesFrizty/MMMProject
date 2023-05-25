@@ -16,35 +16,50 @@ $userid = $_GET['uid'];
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-warning ">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./Pictures/logoMMM.png" alt="mmm" width="50" height="50">
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">MMM: CO.</a>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link " aria-current="page" href="registeredcustomerpage.php?uid=<?= $userid ?> #homepg">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">About</a>
+            <a class="nav-link" href="registeredcustomerpage.php?uid=<?= $userid ?>#prod">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Product</a>
+            <a class="nav-link" href="registeredcustomerpage.php?uid=<?= $userid ?> #aboutpg">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">My Account</a>
+            <a class="nav-link" href="registeredcustomerpage.php?uid=<?= $userid ?> #contactpg">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./accounts.php?uid=<?= $userid ?>">Profile</a></li>
+              <li><a class="dropdown-item" href="./purchasehistory.php?uid=<?= $userid ?>">Transaction history</a></li>
+              <li><a class="dropdown-item" href="./customerHomepage.php">Logout</a></li>
+            </ul>
           </li>
         </ul>
-        <button type="button" class="btn btn-primary me-5">
+       <button type="button" class="btn btn-primary me-4">
           Cart <span class="badge bg-secondary">4</span>
         </button>
       </div>
     </div>
   </nav>
-
+  
   <?php
   $mid = $_GET['Model_id'];
   require_once('../connector.php');
@@ -102,9 +117,11 @@ $userid = $_GET['uid'];
     }
   }
   ?>
-  <footer class="bg-light">
-    <p class="p-2 align-middle text-center">Made by Big Boy ❤️❤️</p>
+<!-- Footer -->
+<footer  Style="background-color: #474e5d; color:white; "class="footer">
+    <p class="lead text-center p-1 fs-7 mb-0">Mighty Mite Motors &copy; 2023</p>
   </footer>
+
 
   <script src="../public/UI Behavior/quantity.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

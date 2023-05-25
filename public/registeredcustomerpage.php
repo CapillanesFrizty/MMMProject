@@ -37,16 +37,16 @@ $userid = $_GET['uid'];
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link text-dark" aria-current="page" href="registeredcustomerpage.php?uid=<?= $userid ?>">Home</a>
+              <a class="nav-link text-dark" aria-current="page" href="#homepg">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="registeredcustomerpage.php?uid=<?= $userid ?>">Products</a>
+              <a class="nav-link text-dark" href="#prod">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="registeredcustomerpage.php?uid=<?= $userid ?>">About</a>
+              <a class="nav-link text-dark" href="#aboutpg">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="registeredcustomerpage.php?uid=<?= $userid ?>">Contact</a>
+              <a class="nav-link text-dark" href="#contactpg">Contact</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
@@ -81,7 +81,7 @@ $userid = $_GET['uid'];
   </header>
 
   <!--Search bar-->
-  <div class="input-group mb-3 mt-5 container">
+  <div id="homepg" class="input-group mb-3 mt-5 container">
     <input type="text" class="form-control" placeholder="Search Item..." aria-describedby="button-addon2">
     <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
   </div>
@@ -91,7 +91,7 @@ $userid = $_GET['uid'];
 
   <div class="container">
 
-    <p class="display-4">Products</p>
+    <p id="prod"class="display-4">Products</p>
     <div class="d-flex flex-row bd-highlight mb-3 justify-content-evenly">
       <?php
       require_once('../connector.php');
@@ -122,30 +122,100 @@ $userid = $_GET['uid'];
 
     </div>
   </div>
-  <!--footer-->
-  <!-- <footer class="footer-distributed" id="contact">
+  <!--about us-->
+<hr>
+<div style= "padding: 50px;
+  text-align: center;
+  "class="about-section" >
+  <h1 id="aboutpg">About Us</h1>
+  <p>Providing you an authentic driving experience</p>
+  <p>Find the best ride-on toy cars for your Kids!  Wide variety of ride-on cars, scooters, trikes, balance bikes, and even electric vehicles.</p>
+</div>
 
-    <div class="footer-left">
+  <!--contact-->
+  <!--Section: Contact v.2-->
+  <hr>
+<section class="mb-4">
 
-      <p class="footer-links">
-        <a class="link-1" href="#hompg">Home</a>
+<!--Section heading-->
+<h2 id="contactpg"class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+<!--Section description-->
+<p class="text-center w-responsive mx-auto mb-5">Do you have any questions or problem reports? Please do not hesitate to contact us directly. Our team will come back to you within
+    a matter of hours to help you.</p>
 
-        <a href="#myButton">Products</a>
+<div class="row">
 
-        <a href="#contact">About</a>
+    <!--Grid column-->
+    <div class="mx-auto col-10 col-md-8 col-lg-6">
+        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
-        <a href="#">Faq</a>
+            <!--Grid row-->
+            <div class="row">
 
-        <a href="#">Support</a>
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="text" id="name" name="name" class="form-control">
+                        <label for="name" class="">Your name</label>
+                    </div>
+                </div>
+                <!--Grid column-->
 
-        <a href="#contact">Contact</a>
-      </p>
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="text" id="email" name="email" class="form-control">
+                        <label for="email" class="">Your email</label>
+                    </div>
+                </div>
+                <!--Grid column-->
 
-      <p>Mighty Mite Motors &copy; 2023</p>
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form mb-0">
+                        <input type="text" id="subject" name="subject" class="form-control">
+                        <label for="subject" class="">Subject</label>
+                    </div>
+                </div>
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-12">
+
+                    <div class="md-form">
+                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                        <label for="message">Your message</label>
+                    </div>
+
+                </div>
+            </div>
+            <!--Grid row-->
+
+        </form>
+
+        <div class="text-center text-md-left">
+            <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+        </div>
+        <div class="status"></div>
     </div>
+    <!--Grid column-->
 
-  </footer> -->
-  <footer class="footer bg-light">
+   
+</div>
+
+</section>
+<!--Section: Contact v.2-->
+ 
+  <!-- Footer -->
+  <footer  Style="background-color: #474e5d; color:white; "class="footer">
     <p class="lead text-center p-1 fs-7">Mighty Mite Motors &copy; 2023</p>
   </footer>
 

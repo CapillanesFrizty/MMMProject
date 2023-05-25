@@ -143,6 +143,11 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
 
+    <!-- Footer -->
+  <footer  Style="background-color: #474e5d; color:white; "class="footer">
+    <p class="lead text-center p-1 fs-7">Mighty Mite Motors &copy; 2023</p>
+  </footer>
+
 </body>
 
 </html>

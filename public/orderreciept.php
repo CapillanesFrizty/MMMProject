@@ -178,6 +178,11 @@
     </div>
     </form>
 
+    <!-- Footer -->
+  <footer  Style="background-color: #474e5d; color:white; "class="footer">
+    <p class="lead text-center p-1 fs-7">Mighty Mite Motors &copy; 2023</p>
+  </footer>
+
 </body>
 
 </html>

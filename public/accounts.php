@@ -33,16 +33,16 @@ $userid = $_GET['uid'];
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="registeredcustomerpage.php?uid=<?= $userid ?>">Home</a>
+            <a class="nav-link " aria-current="page" href="registeredcustomerpage.php?uid=<?= $userid ?> #homepg">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="registeredcustomerpage.php?uid=<?= $userid ?>">Products</a>
+            <a class="nav-link" href="registeredcustomerpage.php?uid=<?= $userid ?>#prod">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="registeredcustomerpage.php?uid=<?= $userid ?> #aboutpg">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="registeredcustomerpage.php?uid=<?= $userid ?> #contact">Contact</a>
+            <a class="nav-link" href="registeredcustomerpage.php?uid=<?= $userid ?> #contactpg">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -154,6 +154,8 @@ $userid = $_GET['uid'];
       }
     }
     ?>
+<!-- Footer -->
+
 
     </div>
   </div>

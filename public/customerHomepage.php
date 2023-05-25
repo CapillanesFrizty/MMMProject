@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mighty Mite Motors Product Page</title>
-
+  
   <!-- Icons -->
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
@@ -16,7 +16,11 @@
   <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
+ <!-- Bootstrap CDN #2 -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  </head>
 
 <body>
   <header>
@@ -34,16 +38,16 @@
         <div class="collapse navbar-collapse me-5" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link text-dark" aria-current="page" href="registeredcustomerpage.php?uid=<?= $userid ?>">Home</a>
+              <a class="nav-link text-dark" aria-current="page" href="#homepg">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="registeredcustomerpage.php?uid=<?= $userid ?>">Products</a>
+              <a class="nav-link text-dark" href="#prod">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="registeredcustomerpage.php?uid=<?= $userid ?>">About</a>
+              <a class="nav-link text-dark" href="#aboutpg">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="registeredcustomerpage.php?uid=<?= $userid ?>">Contact</a>
+              <a class="nav-link text-dark" href="#contactpg">Contact</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
@@ -66,21 +70,21 @@
   </header>
 
   <!-- Start of homepage content -->
-  <div class="container" id="hompg">
-    <div class="image">
-      <img src="./Pictures/homepage.png">
+  <div class="container " id="hompg">
+    <div  class="image ">
+    
     </div>
     <div class="text">
       <h1>Find the best ride-on toy cars for your Kids!</h1>
       <h5>Providing you an authentic driving experience</h5>
-      <button class="button4" onclick="window.location.href='registerpage.html'">Sign Up Now</button>
+      <button class="btn btn-primary" onclick="window.location.href='./registerpage.html'">Signup Now</button>
     </div>
   </div>
 
   <!-- Products Section -->
   <hr>
   <div class="container">
-    <p class="display-4">Products</p>
+    <p class="display-4" id="prod">Products</p>
     <div class="d-flex flex-row bd-highlight mb-3 justify-content-evenly">
       <?php
       require_once('../connector.php');
@@ -96,6 +100,7 @@
               <p class="card-text"><?= $row[2] ?></p>
               <a href="./productspecs.php?uid=<?php echo $userid ?>&Model_id=<?= $row[0] ?>" class="btn btn-primary">View
                 Item</a>
+                
             </div>
           </div>
           <?php
@@ -105,51 +110,103 @@
     </div>
   </div>
   <!-- End Products Section -->
+<!--about us-->
+<hr>
+<div style= "padding: 50px;
+  text-align: center;
+  "class="about-section" >
+  <h1 id="aboutpg">About Us</h1>
+  <p>Providing you an authentic driving experience</p>
+  <p>Find the best ride-on toy cars for your Kids!  Wide variety of ride-on cars, scooters, trikes, balance bikes, and even electric vehicles.</p>
+</div>
 
-  <!-- Popup Login / Modal -->
-  <div id="myPopup" class="popup">
-    <div class="popup-content">
-      <h1>Login Now</h1>
-      <p>To see more amazing ride-on toy cars</p>
-      <a class="btn btn-primary">Login</a>
+  <!--contact-->
+  <!--Section: Contact v.2-->
+  <hr>
+<section class="mb-4">
+
+<!--Section heading-->
+<h2 id="contactpg"class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+<!--Section description-->
+<p class="text-center w-responsive mx-auto mb-5">Do you have any questions or problem reports? Please do not hesitate to contact us directly. Our team will come back to you within
+    a matter of hours to help you.</p>
+
+<div class="row">
+
+    <!--Grid column-->
+    <div class="mx-auto col-10 col-md-8 col-lg-6">
+        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="text" id="name" name="name" class="form-control">
+                        <label for="name" class="">Your name</label>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="text" id="email" name="email" class="form-control">
+                        <label for="email" class="">Your email</label>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form mb-0">
+                        <input type="text" id="subject" name="subject" class="form-control">
+                        <label for="subject" class="">Subject</label>
+                    </div>
+                </div>
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-12">
+
+                    <div class="md-form">
+                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                        <label for="message">Your message</label>
+                    </div>
+
+                </div>
+            </div>
+            <!--Grid row-->
+
+        </form>
+
+        <div class="text-center text-md-left">
+            <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+        </div>
+        <div class="status"></div>
     </div>
-  </div>
-  <!-- End of Popup Login -->
+    <!--Grid column-->
 
+   
+</div>
+
+</section>
+<!--Section: Contact v.2-->
+ 
   <!-- Footer -->
-  <footer class="footer-distributed" id="contact">
-    <div class="footer-left">
-      <p class="footer-links">
-        <a class="link-1" href="#hompg">Home</a>
-        <a href="#myButton">Products</a>
-        <a href="#contact">About</a>
-        <a href="#">Faq</a>
-        <a href="#">Support</a>
-        <a href="#contact">Contact</a>
-      </p>
-      <p>Might Mite Motors &copy; 2023</p>
-    </div>
+  <footer  Style="background-color: #474e5d; color:white; "class="footer">
+    <p class="lead text-center p-1 fs-7">Mighty Mite Motors &copy; 2023</p>
   </footer>
 
-  <!-- Bootstrap CDN #2 -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-
-  <!-- Popup Script -->
-  <script>
-    myButton.addEventListener("click", function () {
-      myPopup.classList.add("show");
-    });
-    closePopup.addEventListener("click", function () {
-      myPopup.classList.remove("show");
-    });
-    window.addEventListener("click", function (event) {
-      if (event.target == myPopup) {
-        myPopup.classList.remove("show");
-      }
-    });
-  </script>
 </body>
 
 </html>

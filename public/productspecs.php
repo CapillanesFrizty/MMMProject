@@ -11,12 +11,11 @@ $userid = $_GET['uid'];
   <title>Document</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-warning ">
+  <nav class="navbar navbar-expand-lg bg-warning ">
     <div class="container-fluid">
 
       <div class="container">
@@ -24,8 +23,7 @@ $userid = $_GET['uid'];
           <img src="./Pictures/logoMMM.png" alt="mmm" width="50" height="50">
         </a>
       </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -53,13 +51,13 @@ $userid = $_GET['uid'];
             </ul>
           </li>
         </ul>
-       <button type="button" class="btn btn-primary me-4">
+        <button type="button" class="btn btn-primary me-4">
           Cart <span class="badge bg-secondary">4</span>
         </button>
       </div>
     </div>
   </nav>
-  
+
   <?php
   $mid = $_GET['Model_id'];
   require_once('../connector.php');
@@ -67,7 +65,7 @@ $userid = $_GET['uid'];
   $res = mysqli_query($con, $query);
   if ($res) {
     while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
-      ?>
+  ?>
       <div class="container p-5 my-5" style="margin-left:14%;">
         <div class="container-fliud">
           <div class="wrapper row">
@@ -83,14 +81,13 @@ $userid = $_GET['uid'];
               <p class="product-description">
                 <?= $row[2] ?>
               </p>
-              <form action="../addtocartfunction.php?uid=<?= $userid ?>&Model_id=<?= $row[0] ?>" method="post">
+              <form action="../addtocartfunction.php?uid=<?= $userid ?>&Model_id=<?= $row[0] ?>" method="POST">
                 <h5>Quantity</h5>
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="input-group">
                       <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus"
-                          data-field="quant[1]">
+                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
                           <i class="fi fi-rr-angle-left"></i>
                         </button>
                       </span>
@@ -103,30 +100,28 @@ $userid = $_GET['uid'];
                     </div>
                   </div>
                 </div>
-                <h4 class="price mt-4">Price: <span>$
-                    <?= $row[3] ?>.00
-                  </span></h4>
-                <button class="btn btn-primary">Add to Cart</button>
-                <a href="" class="btn btn-primary">Buy Item</a>
+                <h4 class="price mt-4">Price(USD):
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=<?= $row[3] ?> name="price">
+                </h4>
+                <button type="submit" class="btn btn-primary" name="add-to-cart">Add to Cart</button>
+                <button class="btn btn-primary" name="buy-item">Buy Item</button>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <?php
+  <?php
     }
   }
   ?>
-<!-- Footer -->
-<footer  Style="background-color: #474e5d; color:white; "class="footer">
+  <!-- Footer -->
+  <footer Style="background-color: #474e5d; color:white; " class="footer">
     <p class="lead text-center p-1 fs-7 mb-0">Mighty Mite Motors &copy; 2023</p>
   </footer>
 
 
   <script src="../public/UI Behavior/quantity.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 

@@ -1,6 +1,5 @@
 <?php
 require_once("connector.php");
-session_start();
 $id = $_GET['uid'];
 $items = $_POST['itemid'];
 
